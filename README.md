@@ -24,7 +24,8 @@ And finally add the broker to your the context.xml by using:
     <import resource="classpath:META-INF/spring/embedded-broker-context.xml" /> 
 
 The default port is `8200` and can be overidden by setting the `embedded-broker.port` 
-property.
+property. See the [example project](https://github.com/rpmiskin/embedded-broker-example/blob/master/src/main/resources/META-INF/spring/internal-broker.properties)
+for other configuration options.
 
 
 ### Using the embedded broker in a Camel Route
