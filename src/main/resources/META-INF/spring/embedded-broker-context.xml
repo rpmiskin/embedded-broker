@@ -10,20 +10,25 @@
 	xsi:schemaLocation="
        http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
-                                  http://activemq.apache.org/schema/core 
-                           http://activemq.apache.org/schema/core/activemq-core.xsd">
+       http://activemq.apache.org/schema/core 
+       http://activemq.apache.org/schema/core/activemq-core.xsd">
 
 
 	<!-- Embedded ActiveMQ Broker -->
 	<!-- Default to port 8200, override with embedded-broker.port -->
-	<amq:broker id="broker" useJmx="false" persistent="false">
+	<amq:broker id="broker" useJmx="${embedded-broker.useJmx:false}"
+		persistent="${embedded-broker.persistent:true}">
 		<amq:transportConnectors>
 			<amq:transportConnector uri="vm://localhost:${embedded-broker.port:8200}" />
 		</amq:transportConnectors>
+		<amq:persistenceAdapter>
+			<amq:levelDB directory="embedded-broker-data" />
+		</amq:persistenceAdapter>
 	</amq:broker>
 
 	<!-- The connection factory, makes use of the embedded ActiveMQ broker. -->
-	<amq:connectionFactory id="jmsFactory" brokerURL="vm://localhost:${embedded-broker.port:8200}" />
+	<amq:connectionFactory id="jmsFactory"
+		brokerURL="vm://localhost:${embedded-broker.port:8200}" />
 
 	<!-- ActiveMQ Pooled Connection Factory, wraps around the connection factory. -->
 	<bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory"

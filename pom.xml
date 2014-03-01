@@ -38,6 +38,11 @@
 			<artifactId>activemq-camel</artifactId>
 			<version>5.9.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-leveldb-store</artifactId>
+			<version>5.9.0</version>
+		</dependency>
 
 	</dependencies>
 

@@ -2,8 +2,8 @@ Embedded Broker
 ===============
 
 ### Overview
-Provides an easy way to set up an embedded ActiveMQ messaging broker for use in an
-Apache Camel project.
+Provides an easy way to set up an embedded [ActiveMQ messaging broker](http://activemq.apache.org)
+ for use in an [Apache Camel](https://camel.apache.org) project.
 
 ### Adding to your project
 Download the source and install it locally using:
@@ -15,7 +15,7 @@ Add a the dependency to your pom using
     <dependency>
         <groupId>in.misk</groupId>
         <artifactId>camel-embedded-broker</artifactId>
-        <version>0.0.4-SNAPSHOT</version>
+        <version>1.0.1-SNAPSHOT</version>
     </dependency>
 
 And finally add the broker to your the context.xml by using:
@@ -33,6 +33,6 @@ be used from within Camel routes by using the following:
 
     from("embedded:queue-name")
 
-For more information see the Camel documentation for the JMS endpoint.
+For more information see the Camel documentation for the [ActiveMQ component](https://camel.apache.org/activemq.html).
 
-
+See the [embedded-broker-example](https://github.com/rpmiskin/embedded-broker-example) project for a working example.
