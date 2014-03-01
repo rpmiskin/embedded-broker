@@ -1,10 +1,24 @@
 Embedded Broker
 ===============
 
+### Overview
 Provides an easy way to set up an embedded ActiveMQ messaging broker for use in an
 Apache Camel project.
 
-Include the context.xml by using:
+### Adding to your project
+Download the source and install it locally using:
+
+    mvn clean install
+
+Add a the dependency to your pom using
+
+    <dependency>
+        <groupId>in.misk</groupId>
+        <artifactId>camel-embedded-broker</artifactId>
+        <version>0.0.4-SNAPSHOT</version>
+    </dependency>
+
+And finally add the broker to your the context.xml by using:
 
     <!-- Import the embedded broker settings. -->
     <import resource="classpath:META-INF/spring/embedded-broker-context.xml" /> 
@@ -12,6 +26,8 @@ Include the context.xml by using:
 The default port is `8200` and can be overidden by setting the `embedded-broker.port` 
 property.
 
+
+### Using the embedded broker in a Camel Route
 A Camel component called `embedded` is initialisd to use the embedded broker. This can
 be used from within Camel routes by using the following:
 
