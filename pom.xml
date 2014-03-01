@@ -7,7 +7,7 @@
 	<groupId>in.misk</groupId>
 	<artifactId>camel-embedded-broker</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<name>Camel Embedded Broker</name>
 	<url>https://github.com/rpmiskin/embedded-broker</url>
